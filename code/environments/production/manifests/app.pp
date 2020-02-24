@@ -3,6 +3,8 @@ node 'node1' {
     notify{"***** NODE1 BLOCK *****":}
 
     include java::install
+    include tomcat::install
+    include tomcat::service
 
 }
 
@@ -21,5 +23,8 @@ node 'node2' {
     notify{"***** NODE2 BLOCK *****":}
 
     include java::install
+    include tomcat::install
+    include tomcat::service
+
 
 }
