@@ -1,4 +1,4 @@
-class tomcat {
+class tomcat inherits tomcat::params{
 
     notify{"### Node1 Block ###":}
 

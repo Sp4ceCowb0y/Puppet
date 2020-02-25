@@ -1,7 +1,7 @@
 node 'node1' {
 
     include tomcat
-    include prefs
+    include base
 
 }
 
@@ -19,9 +19,8 @@ node 'node2' {
 
     notify{"### Node2 Block ###":}
 
-    include java::install
-    include tomcat::install
-    include tomcat::service
+    include tomcat
+    include base
 
 
 }

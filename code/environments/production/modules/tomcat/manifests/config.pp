@@ -1,11 +1,11 @@
-class tomcat::config {
+class tomcat::config inherits tomcat{
 
 
-    file{'/etc/tomcat/tomcat.conf':
+    file{ $::tomcat::config_path :
         source  => 'puppet:///modules/tomcat/tomcat.conf',
         mode    => '0644',
-        owner   => 'tomcat',
-        group   => 'tomcat',
+        owner   => $::tomcat::user,
+        group   => $::tomcat::group,
         notify  => Service['tomcat'],
     }
 

@@ -1,4 +1,4 @@
-class prefs::config {
+class prefs::config inherits prefs{
 
     notify{"print the prefs":
 
