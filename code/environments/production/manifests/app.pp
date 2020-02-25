@@ -1,6 +1,7 @@
 node 'node1' {
 
     include tomcat
+    include prefs
 
 }
 
