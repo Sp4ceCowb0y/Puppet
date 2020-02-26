@@ -1,7 +1,14 @@
 node 'node1' {
 
-    include tomcat
     include base
+
+    class {'::tomcat':
+        xms             => '60m',
+        xmx             => '120m',
+        user            => 'tomcat',
+        group           => 'tomcat',
+        service_state   => 'running'
+    }
 
 }
 
@@ -17,10 +24,14 @@ node default {
 
 node 'node2' {
 
-    notify{"### Node2 Block ###":}
-
-    include tomcat
     include base
 
+    class {'::tomcat':
+        xms             => '70m',
+        xmx             => '130m',
+        user            => 'tomcat',
+        group           => 'tomcat',
+        service_state   => 'running'
+    }
 
 }
