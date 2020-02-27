@@ -9,6 +9,10 @@ node 'node1' {
         group           => 'tomcat',
         service_state   => 'running'
     }
+    
+    tomcat::deploy { "sysfoo":
+        deploy_url  =>  'https://46-243470015-gh.circle-artifacts.com/0/tmp/artifacts/sysfoo.war',
+    }
 
 }
 

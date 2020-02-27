@@ -23,6 +23,11 @@ class base inherits base::params{
     
     package { [ 'tree', 'wget', 'git', 'unzip', 'ntp' ]:}
     
+    service { $::base::ntp_service :
+        ensure  => running,
+        enable  => true,
+    }
+    
     file { '/etc/motd':
         owner   => 'root',
         group   => 'root',
@@ -41,11 +46,6 @@ class base inherits base::params{
         
 
         ",
-    }
-    
-    service { $::base::ntp_service :
-        ensure  => running,
-        enable  => true,
     }
 
 }
