@@ -1,14 +1,9 @@
+hiera_include('classes')
+
 node 'node1' {
 
-    include base
-
-    class {'::tomcat':
-        xms             => '60m',
-        xmx             => '120m',
-        user            => 'tomcat',
-        group           => 'tomcat',
-        service_state   => 'running'
-    }
+    #include base
+    include tomcat
     
     tomcat::deploy { "sysfoo":
         deploy_url      =>  'https://42-243470015-gh.circle-artifacts.com/0/tmp/artifacts/sysfoo.war',
@@ -29,15 +24,8 @@ node default {
 
 node 'node2' {
 
-    include base
-
-    class {'::tomcat':
-        xms             => '70m',
-        xmx             => '130m',
-        user            => 'tomcat',
-        group           => 'tomcat',
-        service_state   => 'running'
-    }
+    #include base
+    include tomcat
     
     tomcat::deploy { "sysfoo":
         deploy_url      =>  'https://42-243470015-gh.circle-artifacts.com/0/tmp/artifacts/sysfoo.war',
