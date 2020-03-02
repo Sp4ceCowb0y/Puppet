@@ -1,5 +1,6 @@
 ---
-tomcat::xms: "100m"
-tomcat::xmx: "200m"
+tomcat::xms: "80m"
+tomcat::xmx: "160m"
 classes:
   - ntp
+

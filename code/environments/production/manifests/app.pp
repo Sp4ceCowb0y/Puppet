@@ -2,34 +2,24 @@ hiera_include('classes')
 
 node 'node1' {
 
-    #include base
-    include tomcat
-    
-    tomcat::deploy { "sysfoo":
-        deploy_url      =>  'https://42-243470015-gh.circle-artifacts.com/0/tmp/artifacts/sysfoo.war',
-        checksum_value  => '09af421c3f483c615ff587141a2806ab',
-    }
+    #include profile::tomcat::prod
+    include role::web
+    #include tomcat
 
 }
 
-node default {
+#node default {
 
-    notify{"checkpoint_1":
+#    notify{"checkpoint_1":
 
-        message => " *** DEFAULT BLOCK *** "
+#        message => " *** DEFAULT BLOCK *** "
     
-    }
+#    }
 
-}
+#}
 
 node 'node2' {
 
-    #include base
-    include tomcat
-    
-    tomcat::deploy { "sysfoo":
-        deploy_url      =>  'https://42-243470015-gh.circle-artifacts.com/0/tmp/artifacts/sysfoo.war',
-        checksum_value  => '09af421c3f483c615ff587141a2806ab',
-    }
+    include role::web
 
 }
