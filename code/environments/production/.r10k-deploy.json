@@ -1,7 +1,7 @@
 {
   "name": "production",
-  "signature": "5a78a3f8f40ffc30fb036a755a35aa116cb3e43e",
-  "started_at": "2020-03-01 13:33:39 +0000",
-  "finished_at": "2020-03-01 13:33:39 +0000",
+  "signature": "cf38f00bbeec94708f26484acde711e3d439990b",
+  "started_at": "2020-03-02 09:25:23 +0000",
+  "finished_at": "2020-03-02 09:25:23 +0000",
   "deploy_success": true
 }

@@ -3,3 +3,4 @@ tomcat::xms: "80m"
 tomcat::xmx: "160m"
 classes:
   - ntp
+
