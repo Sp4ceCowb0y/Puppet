@@ -2,9 +2,7 @@ hiera_include('classes')
 
 node 'node1' {
 
-    #include profile::tomcat::prod
     include role::web
-    #include tomcat
 
 }
 
